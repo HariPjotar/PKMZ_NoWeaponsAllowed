@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class InputManager : MonoBehaviour
 {
+    public static event Action OnJumpPerformed;
+
     private static InputManager _instance;
 
     public static InputManager Instance
@@ -39,5 +42,13 @@ public class InputManager : MonoBehaviour
     public Vector2 GetPlayerMovementVector()
     {
         return _inputActions.DefaultActionMap.Movement.ReadValue<Vector2>();
+    }
+
+    public void OnJumpKeyPress(InputAction.CallbackContext Action)
+    {
+        if(Action.started)
+        {
+            OnJumpPerformed?.Invoke();
+        }
     }
 }
