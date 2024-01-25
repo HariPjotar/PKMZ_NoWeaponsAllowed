@@ -5,6 +5,7 @@ using System;
 public class InputManager : MonoBehaviour
 {
     public static event Action OnJumpPerformed;
+    public static event Action OnInteractPerformed;
 
     private static InputManager _instance;
 
@@ -49,6 +50,14 @@ public class InputManager : MonoBehaviour
         if(Action.started)
         {
             OnJumpPerformed?.Invoke();
+        }
+    }
+
+    public void OnInteractKeyPress(InputAction.CallbackContext Action)
+    {
+        if (Action.started)
+        {
+            OnInteractPerformed?.Invoke();
         }
     }
 }
