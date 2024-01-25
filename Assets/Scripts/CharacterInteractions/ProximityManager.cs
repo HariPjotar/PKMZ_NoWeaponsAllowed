@@ -20,6 +20,9 @@ public class ProximityManager : MonoBehaviour
 
     private void InputManager_OnInteractPerformed()
     {
+        if (_currentInteractable == null)
+            return;
+
         _currentInteractable.Interact();
     }
 
