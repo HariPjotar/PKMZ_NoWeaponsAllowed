@@ -11,9 +11,13 @@ public class CustomGameManager : Singleton<CustomGameManager>
 
     [SerializeField] public Transform CameraTransform;
 
+    [SerializeField] public GlobalCharacterColors GlobalCharacterColors;
+
     private void Awake()
     {
         ProximityManager = Player.GetComponent<ProximityManager>();
+
+        GlobalCharacterColors = Resources.Load("GlobalCharacterColors") as GlobalCharacterColors;
     }
 
 }

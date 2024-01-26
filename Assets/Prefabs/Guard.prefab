@@ -88,9 +88,10 @@ GameObject:
   - component: {fileID: 5684856831365569653}
   - component: {fileID: 5684856831365569642}
   - component: {fileID: 4869232287971955600}
-  - component: {fileID: 7903800593791364008}
+  - component: {fileID: 4368752505913004473}
+  - component: {fileID: 5212704424170744499}
   m_Layer: 0
-  m_Name: Spectator
+  m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +111,7 @@ Transform:
   m_Children:
   - {fileID: 5291186774681231316}
   - {fileID: 5684856831458159075}
+  - {fileID: 7236720752398363650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,7 +152,7 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 2.5, z: 0}
---- !u!114 &7903800593791364008
+--- !u!114 &4368752505913004473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,12 +161,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 5684856831365569652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48d6ccdd5e866540a95eeff20b1a5d1, type: 3}
+  m_Script: {fileID: 11500000, guid: d8fde17dbaa3fa145a7de0d818a2bf5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skinColor: {r: 0, g: 0, b: 0, a: 0}
-  _clothesColor: {r: 0, g: 0, b: 0, a: 0}
+  _guardType: 0
   _renderer: {fileID: 6423609209648145595}
+  _skinColor: {r: 0, g: 0, b: 0, a: 0}
+  _ClothesColor: {r: 0, g: 0, b: 0, a: 0}
+  _hatRenderer: {fileID: 4040099593114236092}
+--- !u!195 &5212704424170744499
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684856831365569652}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5684856831458159087
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,4 +446,71 @@ Transform:
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 6d8bdb2e17acc6a4e809b6e627b0ef7c, type: 3}
   m_PrefabInstance: {fileID: 5684856831082756159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6588642177952787410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5684856831365569653}
+    m_Modifications:
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077033246089973653, guid: bde5f764c032263449207df41550a183, type: 3}
+      propertyPath: m_Name
+      value: BaseballCap
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bde5f764c032263449207df41550a183, type: 3}
+--- !u!23 &4040099593114236092 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7169411798495272814, guid: bde5f764c032263449207df41550a183, type: 3}
+  m_PrefabInstance: {fileID: 6588642177952787410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7236720752398363650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4540314560991512528, guid: bde5f764c032263449207df41550a183, type: 3}
+  m_PrefabInstance: {fileID: 6588642177952787410}
   m_PrefabAsset: {fileID: 0}

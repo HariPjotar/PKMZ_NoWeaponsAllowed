@@ -319,7 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41140273}
-  m_LocalRotation: {x: 0.08471889, y: 0.174552, z: -0.015076095, w: 0.98088074}
+  m_LocalRotation: {x: 0.0847189, y: 0.17455204, z: -0.015076098, w: 0.98088074}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -869,6 +869,7 @@ MonoBehaviour:
   Player: {fileID: 509018063}
   ProximityManager: {fileID: 0}
   CameraTransform: {fileID: 475125558}
+  GlobalCharacterColors: {fileID: 0}
 --- !u!114 &1263672882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,10 +1417,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 127071419, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
-      propertyPath: m_WorldUpOverride
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3563865812883130676, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.6199083
