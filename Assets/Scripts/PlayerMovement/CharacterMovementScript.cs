@@ -7,6 +7,8 @@ public class CharacterMovementScript : MonoBehaviour
 
     [SerializeField] private CharacterController _controller;
 
+    [SerializeField] private Transform _cameraTransform;
+
     private InputManager _inputManager;
 
     [Space]
@@ -29,17 +31,24 @@ public class CharacterMovementScript : MonoBehaviour
         _controller = GetComponent<CharacterController>();
 
         _inputManager = InputManager.Instance;
+
+        _cameraTransform = CustomGameManager.Instance.CameraTransform.GetChild(0).transform;
     }
 
     private void Update()
     {
 
         Vector2 input = _inputManager.GetPlayerMovementVector();
-        Vector3 movementDirection = new Vector3(input.x, 0f, input.y);
 
-        _controller.Move((Vector3.up * _velocityY * Time.deltaTime) + movementDirection * Time.deltaTime * _movementSpeed);
+        Vector3 movementDirection = ApplyCameraRotation(new Vector3(input.x, 0f, input.y));
 
-        RotateModel(input);
+        Vector3 movementVector = Vector3.up * _velocityY * Time.deltaTime;
+
+        _controller.Move(movementVector + movementDirection * Time.deltaTime * _movementSpeed);
+
+        Vector2 modelRotation = new Vector2(movementDirection.x, movementDirection.z);
+
+        RotateModel(modelRotation);
         
     }
 
@@ -76,6 +85,28 @@ public class CharacterMovementScript : MonoBehaviour
             _jumped = false;
         }
 
+    }
+
+    private Vector3 ApplyCameraRotation(Vector3 vectorToRotate)
+    {
+        float currentY = vectorToRotate.y;
+
+        Vector3 camForward = _cameraTransform.forward;
+        Vector3 camRight = _cameraTransform.right;
+
+        camForward.y = 0f;
+        camRight.y = 0f;
+
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+
+        Vector3 cameraForwardZProduct = vectorToRotate.z * camForward;
+        Vector3 cameraRightXProduct = vectorToRotate.x * camRight;
+
+        Vector3 vectorRotated = cameraForwardZProduct + cameraRightXProduct;
+        vectorRotated.y = currentY;
+
+        return vectorRotated;
     }
 
     private void Jump()
