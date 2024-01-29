@@ -21,3 +21,7 @@ public class CustomGameManager : Singleton<CustomGameManager>
     }
 
 }
+public enum GuardStates
+{
+    WANDERING, WAITING, INVESTIGATING, AGGROED, KNOCKED_OUT
+}
