@@ -319,7 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41140273}
-  m_LocalRotation: {x: 0.0847189, y: 0.17455204, z: -0.015076098, w: 0.98088074}
+  m_LocalRotation: {x: 0.08471889, y: 0.174552, z: -0.015076095, w: 0.98088074}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -974,7 +974,7 @@ Transform:
   m_Children:
   - {fileID: 2133820778}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1679849515
 GameObject:
@@ -1182,7 +1182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,7 +1239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1290,14 +1290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 278795243572517990, guid: bb7cdd13046163a4b88a6f3293badeea, type: 3}
-      propertyPath: _maximumWaitTime
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 278795243572517990, guid: bb7cdd13046163a4b88a6f3293badeea, type: 3}
-      propertyPath: _minimumWaitTime
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5684856831365569652, guid: bb7cdd13046163a4b88a6f3293badeea, type: 3}
       propertyPath: m_Name
       value: Guard
@@ -1568,7 +1560,7 @@ Transform:
   - {fileID: 1679849518}
   - {fileID: 1263672880}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118064710 stripped
 GameObject:
@@ -1716,7 +1708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3606378303066215124, guid: c8984501c3fce154195f832647bef5ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1771,22 +1763,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3563865812883130676, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6199083
-      objectReference: {fileID: 0}
-    - target: {fileID: 3563865812883130676, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.76486474
-      objectReference: {fileID: 0}
-    - target: {fileID: 3563865812883130676, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.13611105
-      objectReference: {fileID: 0}
-    - target: {fileID: 3563865812883130676, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.110315464
-      objectReference: {fileID: 0}
     - target: {fileID: 3563865814337269813, guid: e2bb721f9fb8f0f4890dd2fe1a186c92, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1846,7 +1822,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7987236090024886810, guid: a45be8573fcc4dd4ea2148fa7391f39b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7987236090024886810, guid: a45be8573fcc4dd4ea2148fa7391f39b, type: 3}
       propertyPath: m_LocalPosition.x

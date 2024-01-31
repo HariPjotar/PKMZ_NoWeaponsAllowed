@@ -13,11 +13,14 @@ public class GuardWanderingManager : MonoBehaviour
     [SerializeField, Tooltip("The most amount of time that a guard spends standing in a spot.")] private float _maximumWaitTime;
     [SerializeField] private float _nextWanderTime;
 
+    [SerializeField] private float _investigationTime;
+    private float _stopInvestigatingTime;
+
+    [SerializeField] private float _stopDistance;
+
     private Vector3 _currentPOIPoistion;
 
     private NavMeshAgent _agent;
-
-    [SerializeField] private float _stopDistance;
 
     private bool _setNewWanderTime;
 
@@ -30,6 +33,17 @@ public class GuardWanderingManager : MonoBehaviour
 
     void Update()
     {
+        if(CurrentGuardState == GuardStates.INVESTIGATING)
+        {
+            if(Time.time > _stopInvestigatingTime)
+            {
+                SetNewDestination(_poiManager.SelectNewRandomPOI());
+                _setNewWanderTime = false;
+
+                return;
+            }
+        }
+
         if(Vector3.Distance(transform.position, _currentPOIPoistion) < _stopDistance)
         {
             ManagerWanderTimer();
@@ -52,12 +66,27 @@ public class GuardWanderingManager : MonoBehaviour
         }
     }
 
-    private void SetNewDestination(GameObject point)
+    public void SetNewDestination(GameObject point, bool lostAggro = false)
     {
         if (_agent != null) 
         {
             _agent.SetDestination(point.transform.position);
             _currentPOIPoistion = point.transform.position;
+
+            if (point.tag.Equals("Player"))
+            {
+                CurrentGuardState = GuardStates.AGGROED;
+
+                if (lostAggro)
+                {
+                    CurrentGuardState = GuardStates.INVESTIGATING;
+                    _stopInvestigatingTime = Time.time + _investigationTime;
+
+                    return;
+                }
+
+                return;
+            }
 
             CurrentGuardState = GuardStates.WANDERING;
         }
