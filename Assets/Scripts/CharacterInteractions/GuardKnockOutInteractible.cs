@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LadaWindowsInteractable : Interactable
+public class GuardKnockOutInteractible : Interactable
 {
     private ProximityManager proximityManager;
 
@@ -11,7 +11,7 @@ public class LadaWindowsInteractable : Interactable
     public bool CanBeInteractedWithOnlyOnce;
     [SerializeField] private bool _hasBeenInteractedWith;
 
-    [SerializeField] private LadaAlarmScript _alarmScript;
+    [SerializeField] private GuardWanderingManager _guard;
 
     private void Start()
     {
@@ -28,11 +28,10 @@ public class LadaWindowsInteractable : Interactable
 
     public override void Interact()
     {
-        if(CanBeInteractedWithOnlyOnce && _hasBeenInteractedWith)
+        if (CanBeInteractedWithOnlyOnce && _hasBeenInteractedWith)
             return;
 
-        _objectMaterial.SetInt("_IsWindowBroken", 1);
-        _alarmScript.StartAlarm();
+        _guard.OnKnockOutTrigger();
 
         if (CanBeInteractedWithOnlyOnce)
         {

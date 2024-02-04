@@ -19,12 +19,19 @@ public class GuardLookAroundScript : MonoBehaviour
             _manager = GetComponent<GuardWanderingManager>();
 
         _nextLookTime = Time.time + _lookAroundFrequency;
+
+        GetComponent<GuardWanderingManager>().OnKnockOut += GuardLookAroundScript_OnKnockOut;
     }
 
     void Update()
     {
+
         if (_manager.CurrentGuardState == GuardStates.KNOCKED_OUT || _manager.CurrentGuardState == GuardStates.AGGROED)
+        {
+            _nextLookTime = Time.time + _lookAroundTime + _lookAroundFrequency;
+
             return;
+        }
 
         ManageLookAroundTimer();
     }
@@ -44,5 +51,16 @@ public class GuardLookAroundScript : MonoBehaviour
         Tween.Rotate(_guardModel.transform, new Vector3(0f, 0f, 45f), Space.Self, (_lookAroundTime / 3f) * .9f, 0f, Tween.EaseInOutStrong);
         Tween.Rotate(_guardModel.transform, new Vector3(0f, 0f, -90f), Space.Self, (_lookAroundTime / 3f) * .9f, (_lookAroundTime / 3f), Tween.EaseInOutStrong);
         Tween.Rotate(_guardModel.transform, new Vector3(0f, 0f,  45f), Space.Self, (_lookAroundTime / 3f) * .9f, (_lookAroundTime / 3f) * 2f, Tween.EaseInOutStrong);
+    }
+
+    private void GuardLookAroundScript_OnKnockOut()
+    {
+        PlayKnockPutAnimation();
+    }
+
+    private void PlayKnockPutAnimation()
+    {
+        Tween.Rotate(_guardModel.transform, new Vector3(0f, -20f, 0f), Space.Self, .3f, 0f, Tween.EaseWobble);
+        Tween.Rotate(_guardModel.transform, new Vector3(-90f, 0f, 0f), Space.Self, .2f, .4f, Tween.EaseBounce);
     }
 }

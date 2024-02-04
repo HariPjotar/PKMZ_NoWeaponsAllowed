@@ -6,13 +6,9 @@ using UnityEngine.UI;
 
 public class SpeechBubbleLogic : MonoBehaviour
 {
-    [SerializeField] public PersonType Type;
-
     [SerializeField] private GameObject _thoughtBubbleCanvas;
 
     [SerializeField] private List<Sprite> _spectatorEmotions;
-
-    [SerializeField] private List<Sprite> _guardEmotions;
 
     [SerializeField] private Image _emotionImage;
 
@@ -63,8 +59,4 @@ public class SpeechBubbleLogic : MonoBehaviour
     {
         Tween.LocalScale(_thoughtBubbleCanvas.transform, new Vector3(0f, 0f, 0f), .35f, 0f, Tween.EaseIn);
     }
-}
-public enum PersonType 
-{
-    GUARD, SPECTATOR, BOSS
 }

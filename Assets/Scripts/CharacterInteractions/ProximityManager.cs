@@ -66,7 +66,7 @@ public class ProximityManager : MonoBehaviour
     {
         _currentInteractable = obj;
 
-        obj.GetComponent<LadaWindowsInteractable>().ActivateShader();
+        obj.GetComponent<Interactable>().ActivateShader();
     }
 
     private void RemoveCurrentInteractible()
